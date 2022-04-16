@@ -12,7 +12,7 @@ use App\Containers\AppSection\Authentication\Tests\ApiTestCase;
  */
 class ApiLogoutTest extends ApiTestCase
 {
-    protected string $endpoint = 'delete@v1/logout';
+    protected string $endpoint = 'delete@api/v1/logout';
 
     protected array $access = [
         'permissions' => '',
