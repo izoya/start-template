@@ -33,7 +33,7 @@
         "ext-openssl": "*",
         "ext-pdo": "*",
         "ext-tokenizer": "*",
-        "apiato/core": "*",
+        "apiato/core": "^6.2.5",
         "apiato/documentation-generator-container": "^1.0.0",
         "apiato/welcome-container": "^1.0.0",
         "doctrine/dbal": "^3.1.2",
@@ -48,6 +48,7 @@
         "ext-intl": "*",
         "ext-json": "*",
         "apiato/debugger-container": "^1.1.0",
+        "barryvdh/laravel-ide-helper": "^2.12",
         "facade/ignition": "^2.5.13",
         "fakerphp/faker": "^1.13.0",
         "laravel/homestead": "^12.0",
@@ -68,7 +69,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "barryvdh/laravel-ide-helper"
+            ]
         },
         "merge-plugin": {
             "include": [
