@@ -1,7 +1,11 @@
 <template>
-    <router-view></router-view>
+    <section>
+        <router-view></router-view>
+    </section>
 </template>
 
 <script>
-export default {}
+export default {
+    //
+}
 </script>

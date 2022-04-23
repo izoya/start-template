@@ -1,5 +1,5 @@
 <template>
-<div>Test</div>
+    <section>ADMIN DASHBOARD</section>
 </template>
 
 <script>

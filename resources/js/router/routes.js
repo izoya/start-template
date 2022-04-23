@@ -1,9 +1,23 @@
-import Test from "~/views/Test";
-import Sample from "~/views/Sample";
+import Home from "~/views/Home";
+import MainPage from "~/views/Public/MainPage/MainPage";
+import AdminHome from "~/views/Admin/Home";
 
 const routes = [
-    {path: '/', component: Test, name: 'home'},
-    {path: '/sample', component: Sample, name: 'home'},
+    {
+        path: '/',
+        component: Home,
+        children: [
+            {path: '/',         component: MainPage,    name: 'home'},
+        ],
+    },
+    {
+        path: '/admin',
+        component: AdminHome,
+        name: 'admin-home',
+        children: [
+            //
+        ],
+    },
 ];
 
 export default routes;
