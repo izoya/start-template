@@ -1,19 +1,19 @@
-import Home from "~/views/Home";
+import Home from "~/views/Public/Home";
 import MainPage from "~/views/Public/MainPage/MainPage";
-import AdminHome from "~/views/Admin/Home";
+import AdminPanel from "~/views/Admin/AdminPanel";
 
 const routes = [
     {
         path: '/',
         component: Home,
         children: [
-            {path: '/',         component: MainPage,    name: 'home'},
+            {path: '/', component: MainPage, name: 'home'},
         ],
     },
     {
         path: '/admin',
-        component: AdminHome,
-        name: 'admin-home',
+        component: AdminPanel,
+        name: 'admin-panel',
         children: [
             //
         ],
