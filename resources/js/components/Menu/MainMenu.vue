@@ -1,17 +1,22 @@
 <template>
     <el-menu
         v-bind="$attrs"
-        mode="horizontal"
-        :default-active="$route.name"
+        :mode="mode"
+        :default-active="$route.path"
         unique-opened
         router
-        :class="menuClass"
         @select="handleSelect">
-        <el-menu-item index="1">Processing Center</el-menu-item>
-        <el-sub-menu index="2">
-            <template #title>Workspace</template>
-            <el-menu-item index="2-1">item one2</el-menu-item>
-        </el-sub-menu>
+        <template v-for="item in routes" :key="item.path">
+            <el-sub-menu v-if="item.children && item.children.length" :index="item.path">
+                <template #title>{{ item.name }}</template>
+
+                <el-menu-item v-for="subitem in item.children" :index="subitem.path">
+                    {{ subitem.name }}
+                </el-menu-item>
+            </el-sub-menu>
+
+            <el-menu-item v-else :index="item.path">{{ item.name }}</el-menu-item>
+        </template>
     </el-menu>
 </template>
 
@@ -23,14 +28,10 @@ export default {
             default: 'horizontal',
             validator: mode => _.includes(['horizontal', 'vertical'], mode)
         },
-        customClass: {
-            type: String,
-            default: '',
-        },
     },
     computed: {
-        menuClass() {
-            return this.customClass + 'el-menu--' + this.mode;
+        routes() {
+            return this.$router.options.routes;
         },
     },
     methods: {
@@ -41,6 +42,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="sass">
 
 </style>

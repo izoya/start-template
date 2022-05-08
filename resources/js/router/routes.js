@@ -5,15 +5,16 @@ import AdminPanel from "~/views/Admin/AdminPanel";
 const routes = [
     {
         path: '/',
+        name: 'Home',
         component: Home,
         children: [
-            {path: '/', component: MainPage, name: 'home'},
+            {path: '/', component: MainPage, name: 'Home'},
         ],
     },
     {
         path: '/admin',
         component: AdminPanel,
-        name: 'admin-panel',
+        name: 'Admin Panel',
         children: [
             //
         ],
