@@ -1,6 +1,7 @@
-import Home from "~/views/Public/Home";
-import MainPage from "~/views/Public/MainPage/MainPage";
-import AdminPanel from "~/views/Admin/AdminPanel";
+import Home from '~/views/Public/Home';
+import AdminPanel from '~/views/Admin/AdminPanel';
+const MainPage = () => import('~/views/Public/MainPage/MainPage');
+const Auth = () => import('~/views/Public/Auth/Auth');
 
 const routes = [
     {
@@ -9,6 +10,7 @@ const routes = [
         component: Home,
         children: [
             {path: '/', component: MainPage, name: 'Home'},
+            {path: '/login', component: Auth, name: 'Login'},
         ],
     },
     {

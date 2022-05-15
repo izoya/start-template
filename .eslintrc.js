@@ -30,8 +30,12 @@ module.exports = {
             named: 'never',
             asyncArrow: 'always',
         }],
+        quotes: ['error', 'single', {
+            'allowTemplateLiterals': true,
+        }],
         'object-curly-spacing': [2, 'never'],
         'no-multiple-empty-lines': ['error', {max: 1}],
+        'vue/multi-word-component-names': 'off',
         'vue/no-multi-spaces': ['error', {ignoreProperties: false}],
         'vue/html-indent': ['error', 4, {
             attribute: 1,

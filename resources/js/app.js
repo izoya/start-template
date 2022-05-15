@@ -1,4 +1,5 @@
-require('bootstrap');
+require('~/bootstrap');
+require('~/plugins/ziggi');
 require('~/plugins/axios');
 
 import {createApp} from 'vue';
