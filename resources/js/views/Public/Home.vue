@@ -1,7 +1,7 @@
 <template>
     <el-container class="container">
         <el-header class="header">
-            <main-menu class="header__nav"></main-menu>
+            <main-menu class="header__nav" />
         </el-header>
 
         <el-main class="main">
@@ -24,13 +24,17 @@
 </template>
 
 <script>
-    import MainMenu from "~/components/Menu/MainMenu";
-    import Footer from "~/components/Footer/Footer";
+    import MainMenu from '~/components/Menu/MainMenu';
+    import Footer from '~/components/Footer/Footer';
+    import {mapState} from 'vuex';
 
     export default {
         components: {
             MainMenu,
             Footer,
+        },
+        computed: {
+            ...mapState('auth', ['user']),
         },
     };
 </script>

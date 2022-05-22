@@ -7,4 +7,5 @@ mix
     .vue()
     .extract(['vue', 'element-plus'])
     .sass('resources/sass/app.sass', 'public/css/app.css')
-    .postCss('resources/css/app.css', 'public/css');
+    .postCss('resources/css/app.css', 'public/css')
+    .sourceMaps(false);
