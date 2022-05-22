@@ -1,13 +1,14 @@
 {
     "private": true,
     "scripts": {
-        "dev": "yarn run development",
+        "dev": "yarn run ziggy && yarn run development",
         "development": "mix",
-        "watch": "mix watch",
+        "watch": "yarn run ziggy && mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "yarn run production",
-        "production": "mix --production"
+        "prod": "yarn run ziggy && yarn run production",
+        "production": "mix --production",
+        "ziggy": "php artisan ziggy:generate \"resources/js/plugins/ziggy/api-routes.js\""
     },
     "devDependencies": {
         "apidoc": "^0.27.1",

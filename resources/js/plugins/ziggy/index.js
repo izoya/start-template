@@ -1,4 +1,4 @@
-import {} from '~/plugins/ziggy/api-routes';
+import {Ziggy} from '~/plugins/ziggy/api-routes';
 
-window.ziggy = Ziggy;
-window.zRoute = require('~/../../../');
+window.Ziggy = Ziggy;
+window.apiRoute = require('~/../../vendor/tightenco/ziggy/dist');
