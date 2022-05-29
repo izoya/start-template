@@ -21,10 +21,13 @@
                 {{ item.name }}
             </el-menu-item>
         </template>
+        {{ userName ? 'Welcome ' + userName : '' }}
     </el-menu>
 </template>
 
 <script>
+    import {mapState} from 'vuex';
+
     export default {
         props: {
             mode: {
@@ -34,8 +37,12 @@
             },
         },
         computed: {
+            ...mapState('auth', ['user']),
             routes() {
                 return this.$router.options.routes;
+            },
+            userName() {
+                return this.user?.name;
             },
         },
         methods: {

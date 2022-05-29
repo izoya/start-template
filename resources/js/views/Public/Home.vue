@@ -7,14 +7,14 @@
         <el-main class="main">
             <router-view v-slot="{ Component, route }" :key="$route.fullPath">
                 <transition name="fade" mode="out-in">
-<!--                    <keep-alive>-->
-<!--                        <suspense>-->
-<!--                            <template #default>-->
-                                <component :is="Component" :key="route.meta.routeKey ?? route.path"/>
-<!--                            </template>-->
-<!--                            <template #fallback>Loading...</template>-->
-<!--                        </suspense>-->
-<!--                    </keep-alive>-->
+                    <!--                    <keep-alive>-->
+                    <!--                        <suspense>-->
+                    <!--                            <template #default>-->
+                    <component :is="Component" :key="route.meta.routeKey ?? route.path" />
+                    <!--                            </template>-->
+                    <!--                            <template #fallback>Loading...</template>-->
+                    <!--                        </suspense>-->
+                    <!--                    </keep-alive>-->
                 </transition>
             </router-view>
         </el-main>
