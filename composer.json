@@ -33,7 +33,7 @@
         "ext-openssl": "*",
         "ext-pdo": "*",
         "ext-tokenizer": "*",
-        "apiato/core": "*",
+        "apiato/core": "^6.2.5",
         "apiato/documentation-generator-container": "^1.0.0",
         "apiato/welcome-container": "^1.0.0",
         "doctrine/dbal": "^3.1.2",
@@ -42,19 +42,22 @@
         "guzzlehttp/guzzle": "^7.3.0",
         "laravel/framework": "^8.73.0",
         "laravel/tinker": "^2.6.0",
+        "tightenco/ziggy": "^1.4",
         "wikimedia/composer-merge-plugin": "^2.0.1"
     },
     "require-dev": {
         "ext-intl": "*",
         "ext-json": "*",
         "apiato/debugger-container": "^1.1.0",
+        "barryvdh/laravel-ide-helper": "^2.12",
         "facade/ignition": "^2.5.13",
         "fakerphp/faker": "^1.13.0",
         "laravel/homestead": "^12.0",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.3.0",
         "phpunit/phpunit": "^9.5.2",
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "squizlabs/php_codesniffer": "^3.6"
     },
     "autoload": {
         "psr-4": {
@@ -68,7 +71,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "barryvdh/laravel-ide-helper"
+            ]
         },
         "merge-plugin": {
             "include": [
@@ -93,7 +98,8 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "phpcs": "phpcs --standard=PSR2"
     },
     "config": {
         "optimize-autoloader": true,

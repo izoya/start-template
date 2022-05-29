@@ -1,23 +1,37 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
+        "dev": "yarn run ziggy && yarn run development",
         "development": "mix",
-        "watch": "mix watch",
+        "watch": "yarn run ziggy && mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "prod": "yarn run ziggy && yarn run production",
+        "production": "mix --production",
+        "ziggy": "php artisan ziggy:generate \"resources/js/plugins/ziggy/api-routes.js\""
     },
     "devDependencies": {
         "apidoc": "^0.27.1",
         "axios": "^0.21.1",
+        "babel-eslint": "^10.1.0",
         "cross-env": "^5.1",
+        "eslint": "^7.15.0",
+        "eslint-import-resolver-webpack": "^0.13.2",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-vue": "^8.7.1",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.15.2",
-        "sass-loader": "^7.1.0",
-        "postcss": "^8.1.14"
+        "sass": "^1.50.0",
+        "sass-loader": "^12.6.0",
+        "vue": "^3.2.33",
+        "vue-loader": "^16.2.0",
+        "vue-router": "^4.0.14",
+        "vue-template-compiler": "^2.6.14",
+        "vuex": "^4.0.2"
+    },
+    "dependencies": {
+        "element-plus": "^2.1.11"
     }
 }

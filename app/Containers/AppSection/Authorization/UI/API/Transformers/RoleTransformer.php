@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Containers\AppSection\Authorization\UI\API\Transformers;
 
@@ -8,11 +8,11 @@ use League\Fractal\Resource\Collection;
 
 class RoleTransformer extends Transformer
 {
-    protected $availableIncludes = [
+    protected array $availableIncludes = [
 
     ];
 
-    protected $defaultIncludes = [
+    protected array $defaultIncludes = [
         'permissions'
     ];
 
